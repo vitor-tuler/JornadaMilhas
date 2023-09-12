@@ -19,6 +19,7 @@ public class Destinos {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
+    private Float preco;
     private String imagePath1;
     private String imagePath2;
     private String meta;
@@ -31,6 +32,7 @@ public class Destinos {
         this.imagePath2 = dados.imagePath2();
         this.meta = dados.meta();
         this.textoDescritivo = dados.textoDescritivo();
+        this.preco = dados.preco();
         this.ativo = true;
         if (StringValidation.isNullEmptyOrBlank(textoDescritivo)){
             OpenAI gpt = new OpenAI();
@@ -53,6 +55,9 @@ public class Destinos {
 
         if(!StringValidation.isNullEmptyOrBlank(dados.textoDescritivo()))
             this.textoDescritivo = dados.textoDescritivo();
+
+        if(dados.preco() != null)
+            this.preco = dados.preco();
     }
 
     public void excluir() {

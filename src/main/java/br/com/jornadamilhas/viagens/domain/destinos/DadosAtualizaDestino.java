@@ -9,6 +9,7 @@ public record DadosAtualizaDestino(
         @PositiveOrZero
         Long id,
         String nome,
+        Float preco,
         String imagePath1,
         String imagePath2,
         String meta,
