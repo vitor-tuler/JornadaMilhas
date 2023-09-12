@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotNull;
 public record DadosCadastroDestinos(
         @NotBlank
         String nome,
-        @NotBlank
+        @NotNull
         Float preco,
         @NotNull
         @NotBlank

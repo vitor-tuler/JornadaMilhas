@@ -20,7 +20,7 @@ public class OpenAI {
                 .builder()
                 .model("gpt-3.5-turbo")
                 .messages(mensagens)
-                .maxTokens(300)
+                .maxTokens(100)
                 .build();
         ChatMessage resposta = service.createChatCompletion(request).getChoices().get(0).getMessage();
         return resposta.getContent();
