@@ -68,7 +68,7 @@ public class DestinosController {
         }else return ResponseEntity.notFound().build();
     }
 
-    @PutMapping("destinos/{id}")
+    @PutMapping("destinos")
     @Transactional
     public ResponseEntity putDestinos(@RequestBody @Valid DadosAtualizaDestino dados){
         Destinos destinos = repository.getReferenceById(dados.id());

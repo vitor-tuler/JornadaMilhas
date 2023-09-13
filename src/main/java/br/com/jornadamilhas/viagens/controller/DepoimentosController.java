@@ -62,7 +62,7 @@ public class DepoimentosController {
         return ResponseEntity.ok(listaDeDepoimentosRandomico);
     }
 
-    @PutMapping("depoimentos/{id}")
+    @PutMapping("depoimentos")
     @Transactional
     public ResponseEntity putDepoimento(@RequestBody @Valid DadosAtualizaDepoimento dados){
         Depoimento depoimento = repository.getReferenceById(dados.id());

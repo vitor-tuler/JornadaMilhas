@@ -15,15 +15,15 @@ Permite a criação de um novo depoimento de usuario, por meio da utilização d
 
 Exemplo de envio:
 ```json
-"nome": "Dwayne Johnson"
-"depoimento": "It was fun."
+"nome": "Dwayne Johnson",
+"depoimento": "It was fun.",
 "imagePath": "imagepathurl.jpg"
 ```
 Exemplo de resposta:
 ```json
-"id":1
-"nome": "Dwayne Johnson"
-"depoimento": "It was fun."
+"id":1,
+"nome": "Dwayne Johnson",
+"depoimento": "It was fun.",
 "imagePath": "imageurlpath.jpg"
 ```
 
@@ -35,8 +35,8 @@ Exemplo de resposta:
 [
     {
         "id": 1,
-        "nome": "Dwayne Johnson"
-        "depoimento": "It was fun."
+        "nome": "Dwayne Johnson",
+        "depoimento": "It was fun.",
         "imagePath": "imageurlpath.jpg"
     },
     {
@@ -58,7 +58,8 @@ Exemplo de resposta:
 #### ```GET /depoimentos/{id}```
 Retorna o depoimento que corresponde ao id especificado caso estiver ativo
 
-Exemplo de url:
+Exemplo de URL:
+
 ```http://localhost:8080/depoimentos/1```
 
 Exemplo de resposta:
@@ -66,27 +67,27 @@ Exemplo de resposta:
 [
     {
         "id": 1,
-        "nome": "Dwayne Johnson"
-        "depoimento": "It was fun."
+        "nome": "Dwayne Johnson",
+        "depoimento": "It was fun.",
         "imagePath": "imageurlpath.jpg"
     }
 ]
 ```
 
 ### Atualiza depoimento
-#### ```PUT /depoimentos/{id}```
+#### ```PUT /depoimentos```
 Caso o usuário queira realizar uma atualização, deve ser informado um id de depoimento que esteja disponivel, com o campo a ser atualizado, seja o ```"nome"```, ```"depoimento"``` ou ```"imagePath"```, em um JSON
 
 Exemplo de envio:
 ```json
-"id": 1
+"id": 1,
 "nome": "Dwayne Johnson (The Rock)"
 ```
 Exemplo de resposta:
 ```json
-"id":1
-"nome": "Dwayne Johnson (The Rock)"
-"depoimento": "It was fun."
+"id":1,
+"nome": "Dwayne Johnson (The Rock)",
+"depoimento": "It was fun.",
 "imagePath": "imageurlpath.jpg"
 ```
 
@@ -104,21 +105,22 @@ Exemplo de envio:
 ```json
 {
     "nome": "Bertioga",
-    "preco": 1000.00,
-    "imagePath1": "C:\\Users\\User\\OneDrive\\Área de Trabalho\\codigos\\imagens teste\\bertioga1.jpg",
-    "imagePath2": "C:\\Users\\User\\OneDrive\\Área de Trabalho\\codigos\\imagens teste\\bertioga2.jpg",
-    "meta": "meta"
+    "preco": 600.00,
+    "imagePath1": "bertioga1.jpg",
+    "imagePath2": "bertioga2.jpg",
+    "meta": "meta 3"
 }
 ```
 Exemplo de resposta:
 ```json
 {
+    "id": 5,
     "nome": "Bertioga",
-    "preco": 1000.00,
-    "imagePath1": "C:\\Users\\User\\OneDrive\\Área de Trabalho\\codigos\\imagens teste\\bertioga1.jpg",
-    "imagePath2": "C:\\Users\\User\\OneDrive\\Área de Trabalho\\codigos\\imagens teste\\bertioga2.jpg",
-    "meta": "meta",
-    "textoDescritivo": "Bertioga é uma cidadezinha praiana no litoral de São Paulo, com praias maravilhosas e um clima relaxado. Perfeita para quem quer descanso e um bom mergulho no mar!"
+    "imagePath1": "bertioga1.jpg",
+    "imagePath2": "bertioga2.jpg",
+    "meta": "meta 3",
+    "textoDescritivo": "Bertioga é uma cidadezinha praiana no litoral de São Paulo, com praias maravilhosas e um clima relaxado. Perfeita para quem quer descanso e um bom mergulho no mar!",
+    "preco": 600.0
 }
 ```
 
@@ -126,16 +128,15 @@ Exemplo de resposta:
 #### ```GET /destinos-home```
 Seleciona até dez destinos disponibilizados pela agência de viagens contendo todas as informações necessárias para o usuário
 Exemplo de resposta:
-```
+```json
 [
     {
         "id": 1,
         "nome": "Santos",
         "imagePath1": "Santos.jpg",
         "imagePath2": "Santos2.jpg",
-        "meta": null,
-        "textoDescritivo": "Santos é uma cidade que combina história, cultura, praias deslumbrantes e uma atmosfera acolhedora. 
-        Se você busca uma experiência diversificada que inclua relaxamento à beira-mar, exploração histórica e gastronomia saborosa",
+        "meta": "meta 1",
+        "textoDescritivo": "Santos é uma cidade que combina história, cultura, praias deslumbrantes e uma atmosfera acolhedora. Se você busca uma experiência diversificada que inclua relaxamento à beira-mar, exploração histórica e gastronomia saborosa",
         "preco": 200.0
     },
     {
@@ -143,10 +144,8 @@ Exemplo de resposta:
         "nome": "Belo Horizonte",
         "imagePath1": "Belo Horizonte.jpg",
         "imagePath2": "Belo Horizonte 2.jpg",
-        "meta": "meta",
-        "textoDescritivo": "Belo Horizonte, BH pros íntimos, é aquela cidade das montanhas e comida boa. O pão de queijo e a cerveja gelada são lei por aqui. 
-            Na capital mineira, o clima é quente, mas o coração do povo é ainda mais caloroso. 
-            Com sua arquitetura marcante e cultura rica, BH é o lugar perfeito para quem quer curtir a vida com simplicidade e alegria.",
+        "meta": "meta 2",
+        "textoDescritivo": "Belo Horizonte, BH pros íntimos, é aquela cidade das montanhas e comida boa. O pão de queijo e a cerveja gelada são lei por aqui. Na capital mineira, o clima é quente, mas o coração do povo é ainda mais caloroso. Com sua arquitetura marcante e cultura rica, BH é o lugar perfeito para quem quer curtir a vida com simplicidade e alegria.",
         "preco": 400.0
     },
     {
@@ -154,7 +153,7 @@ Exemplo de resposta:
         "nome": "Bertioga",
         "imagePath1": "bertioga1.jpg",
         "imagePath2": "bertioga2.jpg",
-        "meta": "meta",
+        "meta": "meta 3",
         "textoDescritivo": "Bertioga é uma cidadezinha praiana no litoral de São Paulo, com praias maravilhosas e um clima relaxado. Perfeita para quem quer descanso e um bom mergulho no mar!",
         "preco": 600.0
     },
@@ -163,7 +162,7 @@ Exemplo de resposta:
         "nome": "Olimpia",
         "imagePath1": "Olimpia 1.jpg",
         "imagePath2": "Olimpia 2.jpg",
-        "meta": "meta",
+        "meta": "meta n",
         "textoDescritivo": "Olímpia é um lugar top! Cidade brasileira famosa pelas águas quentes e parques aquáticos. Curtição garantida! 🏊‍♂️🌴 #DiversãoMolhada",
         "preco": 3000.0
     }
@@ -173,19 +172,70 @@ Exemplo de resposta:
 ### Detalhar destino por id
 #### ```GET destinos/{id}```
 Retorna o destino que corresponde ao id especificado caso esteja ativo
-exemplo de envio:
+
+exemplo de URL:
+
 ```http://localhost:8080/destinos/4```
+
 exemplo de resposta:
-```
+```json
 {
     "id": 4,
     "nome": "Belo Horizonte",
-    "imagePath1": "C:\\Users\\User\\OneDrive\\Área de Trabalho\\codigos\\imagens teste\\Belo Horizonte.jpg",
-    "imagePath2": "C:\\Users\\User\\OneDrive\\Área de Trabalho\\codigos\\imagens teste\\Belo Horizonte 2.jpg",
-    "meta": "meta",
-    "textoDescritivo": "Belo Horizonte, BH pros íntimos, é aquela cidade das montanhas e comida boa. O pão de queijo e a cerveja gelada são lei por aqui. 
-        Na capital mineira, o clima é quente, mas o coração do povo é ainda mais caloroso.
-        Com sua arquitetura marcante e cultura rica, BH é o lugar perfeito para quem quer curtir a vida com simplicidade e alegria.",
+    "imagePath1": "Belo Horizonte.jpg",
+    "imagePath2": "Belo Horizonte 2.jpg",
+    "meta": "meta 2",
+    "textoDescritivo": "Belo Horizonte, BH pros íntimos, é aquela cidade das montanhas e comida boa. O pão de queijo e a cerveja gelada são lei por aqui. Na capital mineira, o clima é quente, mas o coração do povo é ainda mais caloroso. Com sua arquitetura marcante e cultura rica, BH é o lugar perfeito para quem quer curtir a vida com simplicidade e alegria.",
     "preco": 400.0
 }
 ```
+
+### Detalhar destinos por nome
+#### ```GET /destinos?nome=Nome```
+Ao especificar o nome do destino, caso esteja ativo, deve retornar todas as informações disponiveis para o usuário
+
+exemplo de URL:
+
+```http://localhost:8080/destinos?nome=Santos```
+
+exemplo de resposta:
+```json
+{
+        "id": 1,
+        "nome": "Santos",
+        "imagePath1": "Santos.jpg",
+        "imagePath2": "Santos2.jpg",
+        "meta": "meta 1",
+        "textoDescritivo": "Santos é uma cidade que combina história, cultura, praias deslumbrantes e uma atmosfera acolhedora. Se você busca uma experiência diversificada que inclua relaxamento à beira-mar, exploração histórica e gastronomia saborosa",
+        "preco": 200.0
+}
+```
+
+### Atualiza destino
+#### ```PUT /destinos```
+Ao especificar o id do destino que deseja alterar no JSON, deve ser informado quais dados devem ser atualizados para aquele local
+
+Exemplo de envio:
+```json
+{
+    "id": 6,
+    "preco": 2000.0
+}
+```
+
+Exemplo de resposta:
+```json
+{
+    "id": 6,
+    "nome": "Olimpia",
+    "imagePath1": "C:\\Users\\User\\OneDrive\\Área de Trabalho\\codigos\\imagens teste\\Olimpia 1.jpg",
+    "imagePath2": "C:\\Users\\User\\OneDrive\\Área de Trabalho\\codigos\\imagens teste\\Olimpia 2.jpg",
+    "meta": "meta n",
+    "textoDescritivo": "Olímpia é um lugar top! Cidade brasileira famosa pelas águas quentes e parques aquáticos. Curtição garantida! 🏊‍♂️🌴 #DiversãoMolhada",
+    "preco": 2000.0
+}
+```
+
+### Deleta destino
+#### ```DELETE /destino/{id}```
+Permite remover o destino com determinado id da visualização
