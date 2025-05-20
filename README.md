@@ -1,5 +1,5 @@
 # JornadaMilhas
-Este repositório disponibiliza uma API rest desenvolvido em Java para reforçar conhecimentos aprendidos com Spring Boot, Maven, banco de dados MySql e a integração da API OpenAI.
+Este repositório disponibiliza uma API rest desenvolvido em Java para reforçar conhecimentos aprendidos com Spring, Maven, banco de dados MySql e a integração da API OpenAI.
 O projeto teve como base o Desafio de progamação back-end 7 proposto pela Alura, disponibilizado no link abaixo:
 
 https://www.alura.com.br/challenges/back-end-7
